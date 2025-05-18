@@ -1,5 +1,3 @@
-#include <Arduino.h>
-static const char* html_header PROGMEM = R"rawliteral(
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,8 +63,23 @@ static const char* html_header PROGMEM = R"rawliteral(
         }
     </style>
 </head>
-)rawliteral";
-
-static const char* html_foot PROGMEM = R"rawliteral(
+<body>
+    <div class="form-container" >
+        <h1>WiFi Configuration</h1>
+        <form id="wifi-config-form" method="post">
+            <div class="form-group">
+                <label for="ssid">WiFi SSID</label>
+                <input type="text" id="ssid" name="ssid" placeholder="Enter WiFi SSID" required>
+            </div>
+            <div class="form-group">
+                <label for="password">WiFi Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter WiFi Password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Save Configuration</button>
+            </div>
+            <input type="hidden" id="WIFI_MODE" name="WIFI_MODE" value="AP">
+        </form>
+    </div>
+</body>
 </html>
-)rawliteral";

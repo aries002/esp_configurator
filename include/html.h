@@ -1,3 +1,5 @@
+#include <Arduino.h>
+static const char* html_header ICACHE_FLASH_ATTR = R"rawliteral(
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,22 +65,8 @@
         }
     </style>
 </head>
-<body>
-    <div class="form-container" >
-        <h1>WiFi Configuration</h1>
-        <form id="wifi-config-form" method="post">
-            <div class="form-group">
-                <label for="ssid">WiFi SSID</label>
-                <input type="text" id="ssid" name="ssid" placeholder="Enter WiFi SSID" required>
-            </div>
-            <div class="form-group">
-                <label for="password">WiFi Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter WiFi Password" required>
-            </div>
-            <div class="form-group">
-                <button type="submit">Save Configuration</button>
-            </div>
-        </form>
-    </div>
-</body>
+)rawliteral";
+
+static const char* html_foot ICACHE_FLASH_ATTR = R"rawliteral(
 </html>
+)rawliteral";
